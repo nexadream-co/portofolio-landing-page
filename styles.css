@@ -290,6 +290,53 @@ body {
 }
 
 /* ===========================
+   Portfolio Filter Tabs
+   =========================== */
+.portfolio-filter {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding: 6px;
+  margin-bottom: 2rem;
+  border-radius: 999px;
+  background: rgba(10, 10, 10, 0.05);
+  border: 1px solid rgba(10, 10, 10, 0.06);
+}
+
+.portfolio-filter__btn {
+  appearance: none;
+  border: 0;
+  background: transparent;
+  padding: 9px 18px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink);
+  cursor: pointer;
+  transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
+  font-family: inherit;
+  letter-spacing: 0.01em;
+}
+
+.portfolio-filter__btn:hover {
+  background: rgba(10, 10, 10, 0.06);
+}
+
+.portfolio-filter__btn.is-active {
+  background: var(--ink);
+  color: var(--paper);
+  box-shadow: 0 8px 18px -8px rgba(10, 10, 10, 0.4);
+}
+
+.portfolio-filter__btn.is-active:hover {
+  background: var(--ink);
+}
+
+.p-card.is-hidden {
+  display: none;
+}
+
+/* ===========================
    Portfolio Grid Card (uniform shell, mobile/web variants inside)
    =========================== */
 .portfolio-grid {

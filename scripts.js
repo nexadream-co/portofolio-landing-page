@@ -51,6 +51,31 @@
   }
 
   /* ----------------------------------
+     Portfolio filter tabs
+     ---------------------------------- */
+  const filterBtns = document.querySelectorAll('.portfolio-filter__btn');
+  const portfolioCards = document.querySelectorAll('.portfolio-grid .p-card');
+  if (filterBtns.length && portfolioCards.length) {
+    filterBtns.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const filter = btn.getAttribute('data-filter');
+
+        filterBtns.forEach((b) => {
+          const isActive = b === btn;
+          b.classList.toggle('is-active', isActive);
+          b.setAttribute('aria-selected', isActive ? 'true' : 'false');
+        });
+
+        portfolioCards.forEach((card) => {
+          const category = card.getAttribute('data-category');
+          const show = filter === 'all' || category === filter;
+          card.classList.toggle('is-hidden', !show);
+        });
+      });
+    });
+  }
+
+  /* ----------------------------------
      Year stamp in footer
      ---------------------------------- */
   const yearEl = document.querySelector('[data-year]');
